@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span style="font-weight: bold;">Subsio</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="subscriptions-container">
+  <mat-card class="subscription-card" *ngFor="let sub of subscriptions$ | async">
+    <mat-card-title>{{ sub.name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Price:</strong> €{{ sub.price }}</p>
+      <p><strong>Renewal:</strong> {{ sub.renewalDate }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<button mat-fab color="accent" class="fab-button" (click)="openAddDialog()">
+  <mat-icon>add</mat-icon>
+</button>
