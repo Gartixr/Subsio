@@ -1,0 +1,8 @@
+<h2>Login</h2>
+<form (submit)="login()" style="display: flex; flex-direction: column; gap: 1rem;">
+  <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+  <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+  <div *ngIf="error" style="color: red;">{{ error }}</div>
+  <button type="submit">Login</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>
