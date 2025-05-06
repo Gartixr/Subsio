@@ -1,0 +1,51 @@
+/* Asegura que el root ocupe toda la altura */
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tarjeta central */
+  .landing-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Botones centrados */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Footer pegado abajo */
+  .footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fafafa;
+    font-size: 0.85rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+  }
+  
