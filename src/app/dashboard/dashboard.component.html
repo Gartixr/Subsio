@@ -13,7 +13,7 @@
 </mat-toolbar>
 
 <div class="subscriptions-container">
-  <mat-card class="subscription-card" *ngFor="let sub of subscriptions$ | async">
+  <mat-card class="subscription-card" *ngFor="let sub of subscriptions$ | async" (click)="openViewDialog(sub)">
     <mat-card-title>{{ sub.name }}</mat-card-title>
     <mat-card-content>
       <p><strong>Price:</strong> €{{ sub.price }}</p>
