@@ -23,3 +23,50 @@
   right: 24px;
   z-index: 100;
 }
+
+.charts{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 24px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscription-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.subscription-card mat-card {
+  padding: 16px;
+  margin: 8px;
+}
+
+.subscription-card mat-card:hover {
+  cursor: pointer;
+}

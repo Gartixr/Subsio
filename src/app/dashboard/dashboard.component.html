@@ -1,25 +1,49 @@
-<mat-toolbar color="primary">
-  <span style="font-weight: bold;">Subsio</span>
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <span style="font-weight: bold; font-size: 20px;">Subsio</span>
+
   <span class="spacer"></span>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>account_circle</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="logout()">
-      <mat-icon>logout</mat-icon>
-      <span>Logout</span>
+
+  <div class="user-info">
+    <span>{{ userName }}</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
     </button>
-  </mat-menu>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </mat-menu>
+  </div>
 </mat-toolbar>
 
 <div class="subscriptions-container">
-  <mat-card class="subscription-card" *ngFor="let sub of subscriptions$ | async" (click)="openViewDialog(sub)">
+  <mat-card
+    class="subscription-card"
+    *ngFor="let sub of subscriptions$ | async"
+    (click)="openViewDialog(sub)">
     <mat-card-title>{{ sub.name }}</mat-card-title>
     <mat-card-content>
       <p><strong>Price:</strong> €{{ sub.price }}</p>
       <p><strong>Renewal:</strong> {{ sub.renewalDate }}</p>
     </mat-card-content>
   </mat-card>
+</div>
+
+<div class="summary">
+  <h3>Total Price: €{{ totalPrice | number:'1.2-2' }}</h3>
+  
+  <div class="charts">
+    <div class="chart-container">
+      <h4>Subscription Prices</h4>
+      <app-bar-chart [data]="chartData"></app-bar-chart>
+    </div>
+    
+    <div class="chart-container">
+      <h4>Days Until Renewal</h4>
+      <app-line-chart [data]="chartData"></app-line-chart>
+    </div>
+  </div>
 </div>
 
 <button mat-fab color="accent" class="fab-button" (click)="openAddDialog()">
