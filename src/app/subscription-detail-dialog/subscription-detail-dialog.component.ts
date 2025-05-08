@@ -7,6 +7,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-subscription-detail-dialog',
@@ -17,7 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule
   ],
   templateUrl: './subscription-detail-dialog.component.html',
   styleUrls: ['./subscription-detail-dialog.component.scss']
@@ -36,7 +38,8 @@ export class SubscriptionDetailDialogComponent {
     this.form = this.fb.group({
       name: [data.name],
       price: [data.price],
-      renewalDate: [data.renewalDate]
+      renewalDate: [data.renewalDate],
+      frequency: [data.frequency],
     });
   }
 

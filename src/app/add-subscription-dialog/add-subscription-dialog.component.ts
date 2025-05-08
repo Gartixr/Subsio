@@ -11,7 +11,7 @@ import { inject } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
 import { user } from 'rxfire/auth';
 import { firstValueFrom } from 'rxjs';
-
+import { MatRadioButton } from '@angular/material/radio';
 
 @Component({
   selector: 'app-add-subscription-dialog',
@@ -23,7 +23,8 @@ import { firstValueFrom } from 'rxjs';
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioButton
   ],
   templateUrl: './add-subscription-dialog.component.html',
   styleUrls: ['./add-subscription-dialog.component.scss']
@@ -46,6 +47,7 @@ export class AddSubscriptionDialogComponent {
 
     this.secondFormGroup = this.fb.group({
       renewalDate: ['', Validators.required],
+      frequency: [''],
       notes: ['']
     });
   }

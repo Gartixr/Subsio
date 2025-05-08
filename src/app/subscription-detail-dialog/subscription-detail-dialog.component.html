@@ -1,22 +1,30 @@
-<h2 mat-dialog-title>Edit Subscription</h2>
-<form [formGroup]="form" (ngSubmit)="save()">
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Name</mat-label>
-    <input matInput formControlName="name">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Price</mat-label>
-    <input matInput type="number" formControlName="price">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Renewal Date</mat-label>
-    <input matInput type="date" formControlName="renewalDate">
-  </mat-form-field>
-
-  <div class="actions">
-    <button mat-flat-button color="primary" type="submit">Save</button>
-    <button mat-stroked-button color="warn" type="button" (click)="confirmDelete()">Delete</button>
-  </div>
-</form>
+<div class="container">
+  <h2 mat-dialog-title>Edit Subscription</h2>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" formControlName="price">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Renewal Date</mat-label>
+      <input matInput type="date" formControlName="renewalDate">
+    </mat-form-field>
+  
+    <mat-label>Payment Frequency</mat-label>
+    <mat-radio-group formControlName="frequency">
+      <mat-radio-button value="monthly">Monthly</mat-radio-button>
+      <mat-radio-button value="annual">Annual</mat-radio-button>
+    </mat-radio-group>
+  
+    <div class="actions">
+      <button mat-flat-button color="primary" type="submit">Save</button>
+      <button mat-stroked-button color="warn" type="button" (click)="confirmDelete()">Delete</button>
+    </div>
+  </form>
+</div>

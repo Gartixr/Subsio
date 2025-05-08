@@ -26,6 +26,12 @@
           <mat-label>Renewal Date</mat-label>
           <input matInput type="date" formControlName="renewalDate" required>
         </mat-form-field>
+
+        <mat-label>Payment Frequency</mat-label>
+        <mat-radio-group formControlName="frequency">
+          <mat-radio-button value="monthly" checked>Monthly</mat-radio-button>
+          <mat-radio-button value="annual">Annual</mat-radio-button>
+        </mat-radio-group>
   
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Notes</mat-label>
